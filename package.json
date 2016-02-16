@@ -16,7 +16,10 @@
   "author": "Adam Hansen",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4",
+    "angular-route": "^1.5.0",
+    "gulp": "^3.9.1",
+    "gulp-loopback-sdk-angular": "^0.1.4",
+    "gulp-rename": "^1.2.2",
     "http-server": "^0.6.1"
   }
 }
