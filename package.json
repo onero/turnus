@@ -1,0 +1,18 @@
+{
+  "name": "turnus-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "angular-route": "^1.5.0",
+    "gulp": "^3.9.1",
+    "gulp-loopback-sdk-angular": "^0.1.4",
+    "gulp-rename": "^1.2.2",
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -p 8000 -c-1 -o"
+  },
+  "author": "",
+  "license": "ISC"
+}

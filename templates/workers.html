@@ -1,0 +1,43 @@
+<h1>Medarbejdere</h1>
+<h2>Tilføj medarbejder</h2>
+<form>
+  Fornavn: <input type="text" ng-model="member.firstname">
+  Efternavn: <input type="text" ng-model="member.lastname"><br>
+  Stilling: <input type="text" ng-model="member.position">
+</form>
+<button ng-click="addMember(member)">Tilføj</button>
+</form>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-responsive">
+          <thead>
+             <tr>
+               <th>Fjern</th>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | orderBy: 'firstname'">
+               <td i class="glyphicon glyphicon-remove" ng-click="removeMember(member)"></td>
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+
+
+ <!-- <div class="row">
+        <div class="col-md-">
+          <table class="table table-bordered">
+           <thead>
+              <tr>
+                <th>Dato</th>
+                <th>Tidspunkt</th>
+              </tr>
+           </thead>
+           <tbody>
+              <tr ng-repeat="service in services">
+                <td>{{service.date}}</td>
+                <td>{{service.time}}</td>
+              </tr> -->

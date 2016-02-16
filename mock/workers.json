@@ -1,0 +1,37 @@
+[
+  {
+    "firstName": "Adam",
+    "lastName": "Hansen",
+    "position": "Bas"
+  },
+  {
+    "firstName": "Francesca",
+    "lastName": "Salvatucci",
+    "position": "Alt"
+  },
+  {
+    "firstName": "Helle",
+    "lastName": "Ohrt",
+    "position": "Sopran"
+  },
+  {
+    "firstName": "Emil",
+    "lastName": "Vodder Kristensen",
+    "position": "Tenor"
+  },
+  {
+    "firstName": "Torben",
+    "lastName": "Christensen",
+    "position": "Bas"
+  },
+  {
+    "firstName": "Ida",
+    "lastName": "Jessen",
+    "position": "Sopran"
+  },
+  {
+    "firstName": "Diana",
+    "lastName": "Jensen",
+    "position": "Alt"
+  }
+]

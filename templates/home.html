@@ -1,0 +1,110 @@
+<h1>Turnus</h1>
+<h2>1. Søndag</h2>
+<div ui-view class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen1':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+</div>
+
+<h2>2. Søndag</h2>
+<div ui-view class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen2':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+</div>
+
+<h2>3. Søndag</h2>
+<div ui-view class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen3':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+</div>
+
+<h2>4. Søndag</h2>
+<div ui-view class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen4':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+</div>
+
+<h2>5. Søndag</h2>
+<div ui-view class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen5':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+</div>

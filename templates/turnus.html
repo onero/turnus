@@ -1,0 +1,332 @@
+<h1>Turnus</h1>
+<button ng-click="reset()">Reset</button>
+<h2>Afkryds afmelding</h2>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+               <th>4</th>
+               <th>5</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter : 'Sopran'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="available1()" ng-checked="!this.member.available1"/></td>
+               <td><input type="checkbox" ng-click="available2()" ng-checked="!this.member.available2"/></td>
+               <td><input type="checkbox" ng-click="available3()" ng-checked="!this.member.available3"/></td>
+               <td><input type="checkbox" ng-click="available4()" ng-checked="!this.member.available4"/></td>
+               <td><input type="checkbox" ng-click="available5()" ng-checked="!this.member.available5"/></td>
+             </tr>
+          </table>
+         </div>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+               <th>4</th>
+               <th>5</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter : 'Alt'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="available1()" ng-checked="!this.member.available1"/></td>
+               <td><input type="checkbox" ng-click="available2()" ng-checked="!this.member.available2"/></td>
+               <td><input type="checkbox" ng-click="available3()" ng-checked="!this.member.available3"/></td>
+               <td><input type="checkbox" ng-click="available4()" ng-checked="!this.member.available4"/></td>
+               <td><input type="checkbox" ng-click="available5()" ng-checked="!this.member.available5"/></td>
+             </tr>
+          </table>
+         </div>
+       </div>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+               <th>4</th>
+               <th>5</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter : 'Tenor'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="available1()" ng-checked="!this.member.available1"/></td>
+               <td><input type="checkbox" ng-click="available2()" ng-checked="!this.member.available2"/></td>
+               <td><input type="checkbox" ng-click="available3()" ng-checked="!this.member.available3"/></td>
+               <td><input type="checkbox" ng-click="available4()" ng-checked="!this.member.available4"/></td>
+               <td><input type="checkbox" ng-click="available5()" ng-checked="!this.member.available5"/></td>
+             </tr>
+          </table>
+         </div>
+
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>1</th>
+               <th>2</th>
+               <th>3</th>
+               <th>4</th>
+               <th>5</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter : 'Bas'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="available1()" ng-checked="!this.member.available1"/></td>
+               <td><input type="checkbox" ng-click="available2()" ng-checked="!this.member.available2"/></td>
+               <td><input type="checkbox" ng-click="available3()" ng-checked="!this.member.available3"/></td>
+               <td><input type="checkbox" ng-click="available4()" ng-checked="!this.member.available4"/></td>
+               <td><input type="checkbox" ng-click="available5()" ng-checked="!this.member.available5"/></td>
+             </tr>
+          </table>
+         </div>
+  </div>
+
+<h1>Ledige til turnus uge 1</h1>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>Vælg</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'available1':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="chosen1()" ng-checked="this.member.chosen1"/></td>
+             </tr>
+          </table>
+          <button ng-click="selectAll1()">Vælg alle</button>
+          <button ng-click="unselectAll1()">Fjern alle</button>
+         </div>
+
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen1':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+
+<h1>Ledige til turnus uge 2</h1>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>Vælg</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'available2':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="chosen2()" ng-checked="this.member.chosen2"/></td>
+             </tr>
+          </table>
+          <button ng-click="selectAll2()">Vælg alle</button>
+          <button ng-click="unselectAll2()">Fjern alle</button>
+         </div>
+
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen2':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+
+<h1>Ledige til turnus uge 3</h1>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>Vælg</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'available3':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="chosen3()" ng-checked="this.member.chosen3"/></td>
+             </tr>
+          </table>
+          <button ng-click="selectAll3()">Vælg alle</button>
+          <button ng-click="unselectAll3()">Fjern alle</button>
+         </div>
+
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen3':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+
+<h1>Ledige til turnus uge 4</h1>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>Vælg</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'available4':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="chosen4()" ng-checked="this.member.chosen4"/></td>
+             </tr>
+          </table>
+          <button ng-click="selectAll4()">Vælg alle</button>
+          <button ng-click="unselectAll4()">Fjern alle</button>
+         </div>
+
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen4':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
+
+<h1>Ledige til turnus uge 5</h1>
+<div class="row">
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+               <th>Vælg</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'available5':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+               <td><input type="checkbox" ng-click="chosen5()" ng-checked="this.member.chosen5"/></td>
+             </tr>
+          </table>
+          <button ng-click="selectAll5()">Vælg alle</button>
+          <button ng-click="unselectAll5()">Fjern alle</button>
+         </div>
+
+       <div class="col-md-6">
+         <table class="table table-bordered">
+          <thead>
+             <tr>
+               <th>Fornavn</th>
+               <th>Efternavn</th>
+               <th>Stilling</th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr ng-repeat="member in members | filter:{'chosen5':true} | orderBy: 'position'">
+               <td>{{member.firstname}}</td>
+               <td>{{member.lastname}}</td>
+               <td>{{member.position}}</td>
+             </tr>
+          </table>
+         </div>
+       </div>
