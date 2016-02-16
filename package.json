@@ -10,8 +10,6 @@
     "gulp-rename": "^1.2.2",
     "http-server": "^0.6.1"
   },
-  "scripts": {
-  },
   "author": "",
   "license": "ISC"
 }
