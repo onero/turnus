@@ -10,6 +10,9 @@
     "gulp-rename": "^1.2.2",
     "http-server": "^0.6.1"
   },
+  "scripts": {
+    "start": "http-server -p 8081 -o"
+  },
   "author": "",
   "license": "ISC"
 }
