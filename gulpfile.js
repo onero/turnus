@@ -11,11 +11,11 @@ var gulp = require('gulp'),
 gulp.task('concatScripts', function () {
   return gulp.src([
   'scripts/app.js',
-  // 'scripts/**/*.js'
-  'scripts/routes/*.js',
-  'scripts/controllers/*.js',
-  'scripts/directives/*.js',
-  'scripts/services/*.js'
+  'scripts/**/*.js'
+  // 'scripts/routes/*.js',
+  // 'scripts/controllers/*.js',
+  // 'scripts/directives/*.js',
+  // 'scripts/services/*.js'
   ])
   .pipe(maps.init())
     .pipe(concat('app.concat.js'))
@@ -23,7 +23,6 @@ gulp.task('concatScripts', function () {
     .pipe(gulp.dest('dist'))
 });
 
-//TODO get working!
 gulp.task("minifyScripts", ["concatScripts"], function() {
 	return gulp.src("dist/app.concat.js")
 		.pipe(uglify({mangle: false}))
@@ -54,6 +53,7 @@ gulp.task("build", ["minifyScripts"], function()
   // .pipe(gulp.dest('dist'));
 });
 
+//TODO look at deletion problem
 gulp.task("default", ["clean"], function() {
     gulp.start('build');
 });
