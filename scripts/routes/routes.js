@@ -6,17 +6,17 @@ turnusApp.config(function ($stateProvider, $urlRouterProvider) {
  $stateProvider
    .state('home', {
      url: "/home",
-     templateUrl: "templates/home.html",
+     templateUrl: "views/home.html",
      controller: "mainCtrl"
    })
    .state('turnus', {
      url: "/turnus",
-     templateUrl: "templates/turnus.html",
+     templateUrl: "views/turnus.html",
      controller: "mainCtrl"
    })
    .state('workers', {
      url: "/workers",
-     templateUrl: "templates/workers.html",
+     templateUrl: "views/workers.html",
      controller: "mainCtrl"
    })
 });
