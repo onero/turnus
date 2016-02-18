@@ -1,27 +1,34 @@
 'use strict'
 
 var gulp = require('gulp'),
-concat = require('gulp-concat'),
-uglify = require('gulp-uglify'),
-rename = require('gulp-rename'),
-maps = require('gulp-sourcemaps'),
-clean = require('gulp-clean'),
-loopbackAngular = require('gulp-loopback-sdk-angular');
+  concat = require('gulp-concat'),
+  uglify = require('gulp-uglify'),
+  rename = require('gulp-rename'),
+  maps = require('gulp-sourcemaps'),
+  del = require('del'),
+  loopbackAngular = require('gulp-loopback-sdk-angular');
 
 gulp.task('concatScripts', function () {
-  gulp.src(['scripts/**/*.js'])
+  return gulp.src([
+  'scripts/app.js',
+  // 'scripts/**/*.js'
+  'scripts/routes/*.js',
+  'scripts/controllers/*.js',
+  'scripts/directives/*.js',
+  'scripts/services/*.js'
+  ])
   .pipe(maps.init())
     .pipe(concat('app.concat.js'))
     .pipe(maps.write('./'))
-    .pipe(gulp.dest('scripts'))
+    .pipe(gulp.dest('dist'))
 });
 
 //TODO get working!
 gulp.task("minifyScripts", ["concatScripts"], function() {
-	return gulp.src("scripts/app.concat.js")
+	return gulp.src("dist/app.concat.js")
 		.pipe(uglify({mangle: false}))
 		.pipe(rename('app.min.js'))
-		.pipe(gulp.dest('scripts'));
+		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('loopBack', function () {
@@ -36,18 +43,17 @@ gulp.task('watch', function() {
 });
 
 gulp.task('clean', function() {
-  return gulp.src('dist')
-  .pipe(clean({force: true}))
-  .pipe(gulp.dest('dist'))
+  del([
+    'dist']);
 });
 
-gulp.task("build", ["minifyScripts"], function() {
-  // return gulp.src([,
-  //   'scripts/app.min.js',
-  //   'index.html'], {base: './'})
+gulp.task("build", ["minifyScripts"], function()
+{
+  // return gulp.src([
+  //   'scripts/app.min.js'], {base: './'})
   // .pipe(gulp.dest('dist'));
 });
 
-gulp.task("default", function() {
+gulp.task("default", ["clean"], function() {
     gulp.start('build');
 });
