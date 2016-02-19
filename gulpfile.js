@@ -10,12 +10,12 @@ var gulp = require('gulp'),
 
 gulp.task('concatScripts', function () {
   return gulp.src([
-  'scripts/app.js',
-  'scripts/**/*.js'
-  // 'scripts/routes/*.js',
-  // 'scripts/controllers/*.js',
-  // 'scripts/directives/*.js',
-  // 'scripts/services/*.js'
+  'src/js/app.js',
+  'src/js/**/*.js'
+  // 'src/js/routes/*.js',
+  // 'src/js/controllers/*.js',
+  // 'src/js/directives/*.js',
+  // 'src/js/services/*.js'
   ])
   .pipe(maps.init())
     .pipe(concat('app.concat.js'))
@@ -34,11 +34,11 @@ gulp.task('loopBack', function () {
 	return gulp.src('../turnus-test-server/server/server.js')
     .pipe(loopbackAngular())
     .pipe(rename('lb-services.js'))
-    .pipe(gulp.dest('./scripts/services'));
+    .pipe(gulp.dest('./src/js/services'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('scripts/controllers/main.js', ['concatScripts']);
+  gulp.watch('src/js/controllers/main.js', ['concatScripts']);
 });
 
 gulp.task('clean', function() {
@@ -49,7 +49,8 @@ gulp.task('clean', function() {
 gulp.task("build", ["minifyScripts"], function()
 {
   // return gulp.src([
-  //   'scripts/app.min.js'], {base: './'})
+  //   'src/styles/normalize.css',
+  //   'src/styles/main.css'], {base: './'})
   // .pipe(gulp.dest('dist'));
 });
 
