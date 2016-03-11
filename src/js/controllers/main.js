@@ -6,6 +6,35 @@ angular.module('turnusApp')
       $scope.members = Member.find();
     }
 
+    $scope.sundays = [
+      {
+        date: '1. Søndag',
+        attending: [],
+        notAvailable: []
+      },
+      {
+        date: '2. Søndag',
+        attending: [],
+        notAvailable: []
+      },
+      {
+        date: '3. Søndag',
+        attending: [],
+        notAvailable: []
+      },
+      {
+        date: '4. Søndag',
+        attending: [],
+        notAvailable: []
+      },
+      {
+        date: '5. Søndag',
+        attending: [],
+        notAvailable: []
+      }
+    ];
+
+
     //Reset data
     $scope.reset = function() {
       for (var i = 0; i < $scope.members.length; i++) {

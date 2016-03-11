@@ -38,11 +38,11 @@ gulp.task('loopBack', function () {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/js/controllers/main.js', ['concatScripts']);
+  gulp.watch('src/js/controllers/main.js', ['default']);
 });
 
 gulp.task('clean', function() {
-  del([
+  return del([
     'dist']);
 });
 

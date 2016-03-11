@@ -1,27 +1,28 @@
-<h1>Turnus</h1>
-<h2>1. Søndag</h2>
-<div ui-view class="row">
-       <div class="col-md-6">
-         <table class="table table-bordered">
-          <thead>
-             <tr>
-               <th>Fornavn</th>
-               <th>Efternavn</th>
-               <th>Stilling</th>
-             </tr>
-          </thead>
-          <tbody>
-             <tr ng-repeat="member in members | filter:{'chosen1':true} | orderBy: 'position'">
-               <td>{{member.firstname}}</td>
-               <td>{{member.lastname}}</td>
-               <td>{{member.position}}</td>
-             </tr>
-          </table>
-         </div>
-       </div>
-</div>
+<div ui-view>
+  <h1>Turnus</h1>
+  <div class="row" ng-repeat="sunday in sundays">
+    <h2>{{sunday.date}}</h2>
+    <div class="col-md-6">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Fornavn</th>
+            <th>Efternavn</th>
+            <th>Stilling</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="member in members | filter:sunday.chosen:true | orderBy: 'position'">
+            <td>{{member.firstname}}</td>
+            <td>{{member.lastname}}</td>
+            <td>{{member.position}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 
-<h2>2. Søndag</h2>
+  <!-- <h2>2. Søndag</h2>
 <div ui-view class="row">
        <div class="col-md-6">
          <table class="table table-bordered">
@@ -107,4 +108,4 @@
           </table>
          </div>
        </div>
-</div>
+</div> -->
